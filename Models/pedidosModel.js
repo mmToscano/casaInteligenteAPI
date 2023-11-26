@@ -22,11 +22,11 @@ class PedidoModel {
         return this.executaQuery(sql, novoPedido)
     }
     atualizar(pedidoAtualizado, id) {
-        const sql = "update pedidos set ? where id = ?"
+        const sql = "update pedidos set ? where idpedido = ?"
         return this.executaQuery(sql, [pedidoAtualizado, id])
     }
     deletar(id) {
-        const sql = "delete from pedidos where id = ?"
+        const sql = "delete from pedidos where idpedido = ?"
         return this.executaQuery(sql, id)
     }
 }

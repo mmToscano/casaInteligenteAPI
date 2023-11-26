@@ -10,7 +10,14 @@ class GrupoController {
         res.set('Access-Control-Allow-Origin', '*')
         const listaGrupos = grupoModel.listar();
         return listaGrupos.then(grupos => res.status(200).json(grupos))
-        .catch(error => res.status(400).json(error.message()))
+        .catch(error => res.status(400).json(error))
+    }
+
+    buscarPorGrupos(req, res) {
+        res.set('Access-Control-Allow-Origin', '*')
+        const listaGrupos = grupoModel.listarPorGrupos();
+        return listaGrupos.then(grupos => res.status(200).json(grupos))
+        .catch(error => res.status(400).json(error))
     }
 
     criar(req, res) {
@@ -18,7 +25,7 @@ class GrupoController {
         const novoGrupo = req.body;
         const grupo = grupoModel.criar(novoGrupo);
         return grupo.then(grupoCriado => res.status(201).json(grupoCriado))
-        .catch((error) => res.status(400).json(error.message()))
+        .catch((error) => res.status(400).json(error))
     }
 
     alterar(req, res) {

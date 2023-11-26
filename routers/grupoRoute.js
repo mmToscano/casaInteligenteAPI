@@ -4,7 +4,9 @@ const grupoController = require("../controllers/grupoController");
 
 //get, post, put, delete
 
-router.get("/grupos", grupoController.buscar);
+router.get("/gruposESementes", grupoController.buscarPorGrupos);
+
+router.get("/grupos", grupoController.buscar)
 
 router.post("/grupos", grupoController.criar)
 

@@ -22,11 +22,11 @@ class SementeModel {
         return this.executaQuery(sql, novoSemente)
     }
     atualizar(sementeAtualizado, id) {
-        const sql = "update sementes set ? where id = ?"
+        const sql = "update sementes set ? where idsemente = ?"
         return this.executaQuery(sql, [sementeAtualizado, id])
     }
     deletar(id) {
-        const sql = "delete from sementes where id = ?"
+        const sql = "delete from sementes where idsemente = ?"
         return this.executaQuery(sql, id)
     }
 }

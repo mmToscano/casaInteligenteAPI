@@ -22,11 +22,11 @@ class CarrinhoModel {
         return this.executaQuery(sql, novoCarrinho)
     }
     atualizar(carrinhoAtualizado, id) {
-        const sql = "update carrinho set ? where id = ?"
+        const sql = "update carrinho set ? where idcarrinho = ?"
         return this.executaQuery(sql, [carrinhoAtualizado, id])
     }
     deletar(id) {
-        const sql = "delete from carrinho where id = ?"
+        const sql = "delete from carrinho where idcarrinho = ?"
         return this.executaQuery(sql, id)
     }
 }

@@ -12,7 +12,7 @@ class Tabelas {
         `
         CREATE TABLE if not exists grupos (
             idgrupo int primary key not null auto_increment,
-            nome varchar(20) not null
+            grupoNome varchar(20) not null
           );
         `;
         this.conexao.query(sql, (error) => {

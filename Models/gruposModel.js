@@ -17,16 +17,20 @@ class GrupoModel {
         const sql = "SELECT * FROM grupos";
         return this.executaQuery(sql)
     }
+    listarPorGrupos() {
+        const sql = "select g.idgrupo, g.grupoNome, s.idsemente, s.nome, s.preco, s.preco_na_promocao from grupos as g inner join sementes as s on (g.idgrupo = s.sementes_grupos_id)";
+        return this.executaQuery(sql);
+    }
     criar(novoGrupo) {
         const sql = "insert into grupos set ?"
         return this.executaQuery(sql, novoGrupo)
     }
     atualizar(grupoAtualizado, id) {
-        const sql = "update grupos set ? where id = ?"
+        const sql = "update grupos set ? where idgrupo = ?"
         return this.executaQuery(sql, [grupoAtualizado, id])
     }
     deletar(id) {
-        const sql = "delete from grupos where id = ?"
+        const sql = "delete from grupos where idgrupo = ?"
         return this.executaQuery(sql, id)
     }
 }
