@@ -33,7 +33,6 @@ class Tabelas {
            preco int NOT NULL,
            quantidade int not null,
            id_carrinho_pedidos int,
-            status_do_pedido enum("pedido feito", "enviado", "entregue"),
             data_de_entrega date
          );
         `;
@@ -72,7 +71,6 @@ class Tabelas {
             idsemente int primary key NOT NULL AUTO_INCREMENT,
             nome varchar(60) NOT NULL,
             preco int NOT NULL,
-            preco_na_promocao int DEFAULT NULL,
             sementes_grupos_id int,
              FOREIGN KEY (sementes_grupos_id) REFERENCES grupos(idgrupo)
           );

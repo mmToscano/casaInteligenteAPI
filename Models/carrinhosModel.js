@@ -29,6 +29,10 @@ class CarrinhoModel {
         const sql = "delete from carrinho where idcarrinho = ?"
         return this.executaQuery(sql, id)
     }
+    deletarTudo() {
+        const sql = "delete from carrinho"
+        return this.executaQuery(sql)
+    }
 }
 
 module.exports = new CarrinhoModel();

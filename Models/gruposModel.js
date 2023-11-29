@@ -18,7 +18,7 @@ class GrupoModel {
         return this.executaQuery(sql)
     }
     listarPorGrupos() {
-        const sql = "select g.idgrupo, g.grupoNome, s.idsemente, s.nome, s.preco, s.preco_na_promocao from grupos as g inner join sementes as s on (g.idgrupo = s.sementes_grupos_id)";
+        const sql = "select g.idgrupo, g.grupoNome, s.idsemente, s.nome, s.preco from grupos as g inner join sementes as s on (g.idgrupo = s.sementes_grupos_id)";
         return this.executaQuery(sql);
     }
     criar(novoGrupo) {

@@ -37,6 +37,13 @@ class CarrinhoController {
         carrinho.then(resultCarrinhoDeletado => res.status(200).json(resultCarrinhoDeletado))
         .catch((error) => res.status(400).json(error))
     }
+
+    apagarTudo(req, res) {
+        res.set('Access-Control-Allow-Origin', '*')
+        const carrinho = carrinhoModel.deletarTudo();
+        carrinho.then(resultCarrinhoDeletado => res.status(200).json(resultCarrinhoDeletado))
+        .catch((error) => res.status(400).json(error))
+    }
 }
 
 module.exports = new CarrinhoController();

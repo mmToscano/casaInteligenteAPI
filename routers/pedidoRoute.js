@@ -8,6 +8,8 @@ router.get("/pedidos", pedidoController.buscar);
 
 router.post("/pedidos", pedidoController.criar)
 
+router.post("/pedidos/varios", pedidoController.criarVarios)
+
 router.put("/pedido/:id", pedidoController.alterar)
 
 router.delete("/pedido/:id", pedidoController.apagar)

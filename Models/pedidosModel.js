@@ -21,6 +21,13 @@ class PedidoModel {
         const sql = "insert into pedidos set ?"
         return this.executaQuery(sql, novoPedido)
     }
+    criarVarios(novosPedidos) {
+        for (let index = 0; index < novosPedidos.length; index++) {
+            const sql = "insert into pedidos set ?"
+            conexao.query(sql, novosPedidos[index]);
+        }
+
+    }
     atualizar(pedidoAtualizado, id) {
         const sql = "update pedidos set ? where idpedido = ?"
         return this.executaQuery(sql, [pedidoAtualizado, id])

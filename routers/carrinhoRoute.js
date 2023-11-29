@@ -12,4 +12,6 @@ router.put("/carrinho/:id", carrinhoController.alterar)
 
 router.delete("/carrinho/:id", carrinhoController.apagar)
 
+router.delete("/carrinhoTudo", carrinhoController.apagarTudo)
+
 module.exports = router;

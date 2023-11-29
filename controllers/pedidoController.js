@@ -21,6 +21,14 @@ class PedidoController {
         .catch((error) => res.status(400).json(error.message()))
     }
 
+    criarVarios(req, res) {
+        res.set('Access-Control-Allow-Origin', '*')
+        const novoPedido = req.body;
+        const pedido = pedidoModel.criar(novoPedido);
+        return pedido.then(pedidoCriado => res.status(201).json(pedidoCriado))
+        .catch((error) => res.status(400).json(error.message()))
+    }
+
     alterar(req, res) {
         res.set('Access-Control-Allow-Origin', '*')
         const {id} = req.params;
