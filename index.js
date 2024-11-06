@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 9000;
+const port = 6543;
 const router = require("./routers/index");
 const conexao = require("./infraestrutura/conexao");
 const tabelas = require("./infraestrutura/tabelas");
@@ -22,9 +22,11 @@ app.options('/your_problematic_route', (req, res) => {
   res.sendStatus(200);
 });
 
+/*
 app.options('/carrinhos', cors({
   allowedHeaders: ['Content-Type']
 }));
+*/
 
 app.use(cors());
 router(app, express);

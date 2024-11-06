@@ -1,11 +1,11 @@
-const mysql = require("mysql")
+const mysql = require('mysql')
 
 const conexao = mysql.createConnection({
-    host: "amazdatabaseunitri.couhvmcpkd04.us-east-2.rds.amazonaws.com", /* se o banco estiver, sei lá, no heroku, o caminho seria algo como app-hrk */
+    host: "localhost", 
     port: 3306,
-    user: "admin",
-    password: "unitriamuni",
-    database: "amaz"
+    user: "root",
+    password: "mysql@password",
+    database: "mysql"
 })
 
 module.exports = conexao;
