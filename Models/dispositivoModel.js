@@ -22,11 +22,11 @@ class dispositivoModel {
         return this.executaQuery(sql, novoDispositivo)
     }
     atualizar(dispositivoAtualizado, id) {
-        const sql = "update dispositivo set ? where ID_dispositivo = ?"
+        const sql = "update dispositivo set ? where id_disp = ?"
         return this.executaQuery(sql, [dispositivoAtualizado, id])
     }
     deletar(id) {
-        const sql = "delete from dispositivo where ID_dispositivo = ?"
+        const sql = "delete from dispositivo where id_disp = ?"
         return this.executaQuery(sql, id)
     }
     deletarTudo() {
